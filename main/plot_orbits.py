@@ -24,6 +24,7 @@ def plot_orbits(all_planets):
 
 
     def update(frame_number, planet_points, x_coords, y_coords, z_coords):
+        print(frame_number)
         """
         Updating function, to be repeatedly called by the animation of the planet orbit
         """
@@ -114,7 +115,7 @@ def plot_orbits(all_planets):
         interval=1,
         blit=False,
         repeat=True,
-        frames=list(range(len(list_of_x_coords[7]))),
+        # frames=list(range(len(list_of_x_coords[7]))),
     )
 
     # -------------------------------------------------------------------------------------------------
