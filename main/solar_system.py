@@ -23,8 +23,8 @@ all_planets = [
     (19.2185 * AU, 0.046381, 1.02, 96.998857, 74.006, 0, "Uranus", "powderblue"),
     (30.07 * AU, 0.008678, 0.72, 276.336, 131.784, 0, "Neptune", "dodgerblue"),
     (198206500, 0.25571, 1.077, 177.68, 316.93, 0, "Tesla Roadster", "red"),
-    (17.834 * AU, 0.96714, 162.26, 111.33, 58.42, 0, "Comet Halley", "gray"),
-    (186 * AU, 0.995111, 89.430, 282.47, 130.59, 0, "Comet Hale Bopp", "gray"),
+    (17.834 * AU, 0.96714, 162.26, 111.33, 58.42, 0, "Comet Halley", "dimgray"),
+    (186 * AU, 0.995111, 89.430, 282.47, 130.59, 0, "Comet Hale Bopp", "lightgray"),
 ]
 
 plot_orbits(all_planets)
