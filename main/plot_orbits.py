@@ -115,14 +115,12 @@ def plot_orbits(all_planets):
         interval=1,
         blit=False,
         repeat=True,
-        # frames=list(range(len(list_of_x_coords[7]))),
     )
 
     # -------------------------------------------------------------------------------------------------
     # Finalize and show plot
     # -------------------------------------------------------------------------------------------------
 
-    # ax.set_box_aspect(np.ptp(np.array(list_of_x_coords).flatten()), np.ptp(np.array(list_of_y_coords).flatten(), np.ptp(np.array(list_of_z_coords).flatten())))
     ax.set_xlim3d([-35 * AU, 35 * AU])
     ax.set_ylim3d([-35 * AU, 35 * AU])
     ax.set_zlim3d([-35 * AU, 35 * AU])
