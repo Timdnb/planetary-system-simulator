@@ -62,6 +62,7 @@ Lystra
 Lunara
 Luxora
 Marni
+Dowo
 Mazarine
 Meghan
 Meryl
@@ -70,6 +71,7 @@ Crispin
 Cyrano
 Dagger
 Derry
+Timorus
 Annora
 Antheia
 Antinea
