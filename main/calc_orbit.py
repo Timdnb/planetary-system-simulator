@@ -16,20 +16,18 @@ def calc_orbit(
     """
 
     # Standard gravitational parameter
-    mu_sun = 1.327124400189 * 10 ** 11
+    mu_sun = 1.327124400189 * 10 ** 11 # km^3 s^-2
 
-    # Kepler elements
+    # Convert Kepler elements to radians
     inclination = np.deg2rad(inc)
     arg_of_periapsis = np.deg2rad(periapsis)
     r_ascending_node = np.deg2rad(ascending_node)
 
     # Planet specific constants
     period = 2 * np.pi * np.sqrt((a_planet ** 3) / (mu_sun))
-    # print(period/24/3600)
-
-    steps = int(period / dt)
 
     # Initial time values
+    steps = int(period / dt)
     t = np.linspace(0, period, num=steps)
 
     # Compute mean anomaly
