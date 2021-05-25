@@ -15,6 +15,8 @@ AU = 149597871  # km
 # List containing all necessary orbital parameters
 # Semi-major axis is in km
 # Inclination is with respect to the ecliptic
+# For every row: 
+#   semi-major axis | eccentricity | inclinaton | arg. of periapsis | long. of asc. node | time of perihelion passage | moon yes/no | list no. of planet that moon orbits | mu | name | color 
 all_planets = [
     # Planets
     # a        e         inc    periapsis ascending anomaly name color
