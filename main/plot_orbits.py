@@ -17,8 +17,9 @@ def plot_orbits(all_planets):
         """
         if moon == False:
             ax.plot(lst_x, lst_y, lst_z, color=clr, label=planet)
-
-        (point,) = ax.plot(lst_x[0], lst_y[0], lst_z[0], color=clr, marker="o")
+            (point,) = ax.plot(lst_x[0], lst_y[0], lst_z[0], color=clr, marker="o", markersize=6)
+        else:
+            (point,) = ax.plot(lst_x[0], lst_y[0], lst_z[0], color=clr, marker="o", markersize=2)
 
         return point
 
@@ -90,6 +91,7 @@ def plot_orbits(all_planets):
             planet[4],
             planet[5],
             planet[6],
+            planet[8],
         )
 
         # If the planet is a moon, add the coordinates of the moon's orbit the the coordinates of the planet it is orbiting
@@ -98,9 +100,9 @@ def plot_orbits(all_planets):
             moon_y = []
             moon_z = []
             for i in list(range(len(list_of_x_coords[planet[7]]))):
-                moon_x.append(x[i%len(x)-1] + list_of_x_coords[planet[7]][i])
-                moon_y.append(y[i%len(y)-1] + list_of_y_coords[planet[7]][i])
-                moon_z.append(z[i&len(z)-1] + list_of_z_coords[planet[7]][i])
+                moon_x.append(x[i % (len(x)-1)] + list_of_x_coords[planet[7]][i])
+                moon_y.append(y[i % (len(y)-1)] + list_of_y_coords[planet[7]][i])
+                moon_z.append(z[i & (len(z)-1)] + list_of_z_coords[planet[7]][i])
             x = moon_x
             y = moon_y
             z = moon_z
@@ -109,7 +111,7 @@ def plot_orbits(all_planets):
         list_of_y_coords.append(y)
         list_of_z_coords.append(z)
 
-        list_of_planet_points.append(plot_orbit_and_return_point(x, y, z, planet[6], planet[8], planet[9], ax))
+        list_of_planet_points.append(plot_orbit_and_return_point(x, y, z, planet[6], planet[9], planet[10], ax))
 
     # -------------------------------------------------------------------------------------------------
     # Animate orbits
