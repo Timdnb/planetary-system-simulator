@@ -9,7 +9,7 @@ def f_full(E, M, e):
 
 
 def calc_orbit(
-    a_planet, e_planet, inc, periapsis, ascending_node, t_0, moon, dt=500000
+    a_planet, e_planet, inc, periapsis, ascending_node, t_0, moon, mu_planet, dt=200000
 ):
     """
     Calculate the coordinates of a planet using the semi-major axis and the eccentricity
@@ -19,7 +19,7 @@ def calc_orbit(
     mu_sun = 1.327124400189 * 10 ** 11 # km^3 s^-2
 
     if moon == True:
-        mu = 6.836 * 10 ** 6
+        mu = mu_planet
     else:
         mu = mu_sun
 
@@ -32,7 +32,7 @@ def calc_orbit(
     period = 2 * np.pi * np.sqrt((a_planet ** 3) / (mu))
 
     # Initial time values
-    steps = int(period / dt)
+    steps = int(round(period,3) / dt)
     t = np.linspace(0, period, num=steps)
 
     # Compute mean anomaly
