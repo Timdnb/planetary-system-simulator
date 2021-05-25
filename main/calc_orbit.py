@@ -9,7 +9,7 @@ def f_full(E, M, e):
 
 
 def calc_orbit(
-    a_planet, e_planet, inc, periapsis, ascending_node, t_0, dt=500000
+    a_planet, e_planet, inc, periapsis, ascending_node, t_0, moon, dt=500000
 ):
     """
     Calculate the coordinates of a planet using the semi-major axis and the eccentricity
@@ -18,20 +18,25 @@ def calc_orbit(
     # Standard gravitational parameter
     mu_sun = 1.327124400189 * 10 ** 11 # km^3 s^-2
 
+    if moon == True:
+        mu = 6.836 * 10 ** 6
+    else:
+        mu = mu_sun
+
     # Convert Kepler elements to radians
     inclination = np.deg2rad(inc)
     arg_of_periapsis = np.deg2rad(periapsis)
     r_ascending_node = np.deg2rad(ascending_node)
 
     # Planet specific constants
-    period = 2 * np.pi * np.sqrt((a_planet ** 3) / (mu_sun))
+    period = 2 * np.pi * np.sqrt((a_planet ** 3) / (mu))
 
     # Initial time values
     steps = int(period / dt)
     t = np.linspace(0, period, num=steps)
 
     # Compute mean anomaly
-    M = np.sqrt((mu_sun) / (a_planet ** 3)) * (t - t_0)
+    M = np.sqrt((mu) / (a_planet ** 3)) * (t - t_0)
 
     # Compute eccentric anomaly
     E = optimize.newton(lambda x: f_full(x, M, e_planet), np.full((steps), np.pi))
