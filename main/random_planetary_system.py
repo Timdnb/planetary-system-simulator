@@ -32,8 +32,8 @@ planet_names = generate_random_planet_names(amount_of_planets)
 
 # Fill all_planets list with all necessary values to plot the orbits
 for i in list(range(amount_of_planets)):
-    #        semi-major axis              eccentricity         inclination             argument of pericenter  long. of asc. node     t_p moon  plan name            color
-    planet = (random.uniform(0, 30 * AU), random.uniform(0,1), random.uniform(0, 180), random.uniform(0, 360), random.uniform(0, 360), 0, False, 0, planet_names[i], random_color())
+    #        semi-major axis              eccentricity         inclination             argument of pericenter  long. of asc. node     t_p moon plan mu name            color
+    planet = (random.uniform(0, 30 * AU), random.uniform(0,1), random.uniform(0, 180), random.uniform(0, 360), random.uniform(0, 360), 0, False, 0, 0, planet_names[i], random_color())
     all_planets.append(planet)
 
 plot_orbits(all_planets)
