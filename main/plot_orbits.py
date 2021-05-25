@@ -11,12 +11,12 @@ from calc_orbit import calc_orbit, AU
 # -------------------------------------------------------------------------------------------------
 
 def plot_orbits(all_planets):
-    def plot_orbit_and_return_point(lst_x, lst_y, lst_z, planet, clr, ax):
+    def plot_orbit_and_return_point(lst_x, lst_y, lst_z, moon, planet, clr, ax):
         """
         Plot the orbit of the planet and make a point at the start location (will be used later to animate)
         """
-
-        ax.plot(lst_x, lst_y, lst_z, color=clr, label=planet)
+        if moon == False:
+            ax.plot(lst_x, lst_y, lst_z, color=clr, label=planet)
 
         (point,) = ax.plot(lst_x[0], lst_y[0], lst_z[0], color=clr, marker="o")
 
@@ -89,13 +89,27 @@ def plot_orbits(all_planets):
             planet[3],
             planet[4],
             planet[5],
+            planet[6],
         )
+
+        # If the planet is a moon, add the coordinates of the moon's orbit the the coordinates of the planet it is orbiting
+        if planet[6] == True:
+            moon_x = []
+            moon_y = []
+            moon_z = []
+            for i in list(range(len(list_of_x_coords[planet[7]]))):
+                moon_x.append(x[i%len(x)-1] + list_of_x_coords[planet[7]][i])
+                moon_y.append(y[i%len(y)-1] + list_of_y_coords[planet[7]][i])
+                moon_z.append(z[i&len(z)-1] + list_of_z_coords[planet[7]][i])
+            x = moon_x
+            y = moon_y
+            z = moon_z
 
         list_of_x_coords.append(x)
         list_of_y_coords.append(y)
         list_of_z_coords.append(z)
 
-        list_of_planet_points.append(plot_orbit_and_return_point(x, y, z, planet[6], planet[7], ax))
+        list_of_planet_points.append(plot_orbit_and_return_point(x, y, z, planet[6], planet[8], planet[9], ax))
 
     # -------------------------------------------------------------------------------------------------
     # Animate orbits
