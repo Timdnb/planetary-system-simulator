@@ -14,6 +14,7 @@ AU = 149597871  # km
 
 # List containing all necessary orbital parameters
 # Semi-major axis is in km
+# Inclination is with respect to the ecliptic
 all_planets = [
     # a        e         inc    periapsis ascending anomaly name color
     (57909050, 0.205630, 7.005, 29.124, 48.331, 0, "Mercury", "sandybrown"),
