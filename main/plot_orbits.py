@@ -10,7 +10,7 @@ from calc_orbit import calc_orbit, AU
 # Support functions
 # -------------------------------------------------------------------------------------------------
 
-def plot_orbits(all_planets):
+def plot_orbits(all_planets, ms=20):
     def plot_orbit_and_return_point(lst_x, lst_y, lst_z, moon, planet, clr, ax):
         """
         Plot the orbit of the planet and make a point at the start location (will be used later to animate)
@@ -24,22 +24,33 @@ def plot_orbits(all_planets):
         return point
 
 
-    def update(frame_number, planet_points, x_coords, y_coords, z_coords):
+    def update(frame_number, planet_points, x_coords, y_coords, z_coords, planets):
         """
         Updating function, to be repeatedly called by the animation of the planet orbit
         """
         for index, planet_point in enumerate(planet_points):
+            moon_dx = 0
+            moon_dy = 0
+            moon_dz = 0
+
+            # If the planet is a moon, add the coordinates of the moon's orbit the the coordinates of the planet it is orbiting
+            if planets[index][6] == True:
+
+                moon_dx = x_coords[planets[index][7]][frame_number % len(x_coords[planets[index][7]])]
+                moon_dy = y_coords[planets[index][7]][frame_number % len(y_coords[planets[index][7]])]
+                moon_dz = z_coords[planets[index][7]][frame_number % len(z_coords[planets[index][7]])]
+
             # Set x and y coordinate
             planet_point.set_data(
-                x_coords[index][frame_number % len(x_coords[index])],
-                y_coords[index][frame_number % len(y_coords[index])],
+                x_coords[index][frame_number % len(x_coords[index])] + moon_dx,
+                y_coords[index][frame_number % len(y_coords[index])] + moon_dy,
             )
             # Set z coordinate
             planet_point.set_3d_properties(
-                z_coords[index][frame_number % len(z_coords[index])]
+                z_coords[index][frame_number % len(z_coords[index])] + moon_dz
             )
 
-        return (planet_points,)
+        return planet_points
 
 
     # print(
@@ -94,19 +105,6 @@ def plot_orbits(all_planets):
             planet[8],
         )
 
-        # If the planet is a moon, add the coordinates of the moon's orbit the the coordinates of the planet it is orbiting
-        if planet[6] == True:
-            moon_x = []
-            moon_y = []
-            moon_z = []
-            for i in list(range(len(list_of_x_coords[planet[7]]))):
-                moon_x.append(x[i % (len(x)-1)] + list_of_x_coords[planet[7]][i])
-                moon_y.append(y[i % (len(y)-1)] + list_of_y_coords[planet[7]][i])
-                moon_z.append(z[i & (len(z)-1)] + list_of_z_coords[planet[7]][i])
-            x = moon_x
-            y = moon_y
-            z = moon_z
-
         list_of_x_coords.append(x)
         list_of_y_coords.append(y)
         list_of_z_coords.append(z)
@@ -126,8 +124,9 @@ def plot_orbits(all_planets):
             list_of_x_coords,
             list_of_y_coords,
             list_of_z_coords,
+            all_planets
         ),
-        interval=1,
+        interval=ms,
         blit=False,
         repeat=True,
     )
