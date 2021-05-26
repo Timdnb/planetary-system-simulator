@@ -9,7 +9,7 @@ def f_full(E, M, e):
 
 
 def calc_orbit(
-    a_planet, e_planet, inc, periapsis, ascending_node, t_0, moon, mu_planet, dt=200000
+    a_planet, e_planet, inc, periapsis, ascending_node, t_0, moon, mu_planet, dt=500000
 ):
     """
     Calculate the coordinates of a planet using the semi-major axis and the eccentricity
