@@ -18,7 +18,7 @@ AU = 149597871  # km
 # For every row: 
 #   semi-major axis | eccentricity | inclinaton | arg. of periapsis | long. of asc. node | time of perihelion passage | moon yes/no | list no. of planet that moon orbits | mu | name | color 
 all_planets = [
-    # Planets
+    # ------------------------- Planets -------------------------
     # a        e         inc    periapsis ascending anomaly name color
     (57909050, 0.205630, 7.005, 29.124, 48.331, 0, False, 0, 2.2023 * 10 ** 4, "Mercury", "sandybrown"),
     (108209000, 0.006772, 3.39, 54.884, 76.68, 0, False, 0, 3.248599 * 10 ** 5, "Venus", "gold"),
@@ -30,18 +30,12 @@ all_planets = [
     (30.07 * AU, 0.008678, 1.77, 276.336, 131.784, 0, False, 0, 6.836529 * 10 ** 6, "Neptune", "dodgerblue"),
     (198206500, 0.25571, 1.077, 177.68, 316.93, 0, False, 0, 0, "Tesla Roadster", "red"),
     (17.834 * AU, 0.96714, 162.26, 111.33, 58.42, 0, False, 0, 0, "Comet Halley", "dimgray"),
-    (186 * AU, 0.995111, 89.430, 282.47, 130.59, 0, False, 0, 0, "Comet Hale Bopp", "lightgray"),
-    # Moons
+    # (186 * AU, 0.995111, 89.430, 282.47, 130.59, 0, False, 0, 0, "Comet Hale Bopp", "lightgray"),
+    # ------------------------- Moons -------------------------
     # a      e       inc    p  as an moon pl  name    color
     (384399, 0.0549, 5.145, 0, 0, 0, True, 2, 3.896004 * 10 ** 5, "Moon", "lightgray"),
     (1882700, 0.0074, 2.017, 0, 0, 0, True, 4, 1.266865 * 10 ** 8, "Callisto", "lightgray"),
     (354759, 0.000016, 129.812, 0, 0, 0, True, 7, 6.836529 * 10 ** 6, "Triton", "lightgray"),
-    # Cool example of moons (put dt=5000000, make all previous lines comments and uncomment the next 5)
-    # (30.07 * AU, 0.008678, 1.77, 276.336, 131.784, 0, False, 0, 6.836529 * 10 ** 6, "Neptune", "dodgerblue"),
-    # (4 * AU, 0.000016, 0, 0, 0, 0, True, 0, 6.836529 * 10 ** 10, "Test Moon 1", "lightgray"),
-    # (4 * AU, 0.000016, 45, 0, 90, 0, True, 0, 6.836529 * 10 ** 10, "Test Moon 2", "lightgray"),
-    # (4 * AU, 0.000016, 90, 0, 180, 0, True, 0, 6.836529 * 10 ** 10, "Test Moon 3", "lightgray"),
-    # (4 * AU, 0.000016, 135, 0, 270, 0, True, 0, 6.836529 * 10 ** 10, "Test Moon 4", "lightgray"),
 ]
 
 plot_orbits(all_planets)
