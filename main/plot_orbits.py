@@ -17,7 +17,7 @@ def plot_orbits(all_planets, ms=20):
         """
         if moon == False:
             ax.plot(lst_x, lst_y, lst_z, color=clr, label=planet)
-            (point,) = ax.plot(lst_x[0], lst_y[0], lst_z[0], color=clr, marker="o", markersize=6)
+            (point,) = ax.plot(lst_x[0], lst_y[0], lst_z[0], color=clr, marker="o", markersize=5)
         else:
             (point,) = ax.plot(lst_x[0], lst_y[0], lst_z[0], color=clr, marker="o", markersize=2)
 
@@ -79,7 +79,7 @@ def plot_orbits(all_planets, ms=20):
     ax = plt.axes(projection="3d")
 
     # Add the Sun to the plot
-    ax.plot(0, 0, 0, color="darkorange", marker="o")
+    ax.plot(0, 0, 0, color="darkorange", marker="o", markersize=7)
 
     # -------------------------------------------------------------------------------------------------
     # Calculate planet orbits and plot the orbits
@@ -134,10 +134,14 @@ def plot_orbits(all_planets, ms=20):
     # -------------------------------------------------------------------------------------------------
     # Finalize and show plot
     # -------------------------------------------------------------------------------------------------
+    lst_semi_major_ax =[]
+    for i in range(len(all_planets)):
+        lst_semi_major_ax.append(all_planets[i][0])
+        max_dist = 1.1* max(lst_semi_major_ax)
 
-    ax.set_xlim3d([-35 * AU, 35 * AU])
-    ax.set_ylim3d([-35 * AU, 35 * AU])
-    ax.set_zlim3d([-35 * AU, 35 * AU])
+    ax.set_xlim3d([-max_dist, max_dist])
+    ax.set_ylim3d([-max_dist, max_dist])
+    ax.set_zlim3d([-max_dist, max_dist])
 
     plt.axis("off")
 
