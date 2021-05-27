@@ -36,6 +36,12 @@ all_planets = [
     (384399, 0.0549, 5.145, 0, 0, 0, True, 2, 3.896004 * 10 ** 5, "Moon", "lightgray"),
     (1882700, 0.0074, 2.017, 0, 0, 0, True, 4, 1.266865 * 10 ** 8, "Callisto", "lightgray"),
     (354759, 0.000016, 129.812, 0, 0, 0, True, 7, 6.836529 * 10 ** 6, "Triton", "lightgray"),
+    # Cool example of moons (put dt=5000000, make all previous lines comments and uncomment the next 5)
+    # (30.07 * AU, 0.008678, 1.77, 276.336, 131.784, 0, False, 0, 6.836529 * 10 ** 6, "Neptune", "dodgerblue"),
+    # (4 * AU, 0.000016, 0, 0, 0, 0, True, 0, 6.836529 * 10 ** 10, "Test Moon 1", "lightgray"),
+    # (4 * AU, 0.000016, 45, 0, 90, 0, True, 0, 6.836529 * 10 ** 10, "Test Moon 2", "lightgray"),
+    # (4 * AU, 0.000016, 90, 0, 180, 0, True, 0, 6.836529 * 10 ** 10, "Test Moon 3", "lightgray"),
+    # (4 * AU, 0.000016, 135, 0, 270, 0, True, 0, 6.836529 * 10 ** 10, "Test Moon 4", "lightgray"),
 ]
 
 plot_orbits(all_planets)
