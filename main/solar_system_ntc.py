@@ -1,4 +1,6 @@
-# This version will simulate the solar system which is NOT to scale
+"""
+This version will simulate the solar system which is NOT to scale, put dt in calc_orbit.py to 5000
+"""
 import matplotlib.pyplot as plt
 from matplotlib.animation import FuncAnimation
 import numpy as np

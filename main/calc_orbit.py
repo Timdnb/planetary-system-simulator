@@ -1,5 +1,7 @@
+"""
+This program calculates the coordinates of the orbits using the orbital parameters
+"""
 import numpy as np
-
 from scipy import optimize
 
 AU = 149597871 # km

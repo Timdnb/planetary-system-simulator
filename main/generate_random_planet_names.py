@@ -1,3 +1,6 @@
+"""
+Program to generate random names for the planets
+"""
 from random import randint
 
 names = """Adlai

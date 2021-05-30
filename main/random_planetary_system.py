@@ -1,4 +1,6 @@
-# Program to draw solar system
+"""
+Program to generate random planetary system
+"""
 import matplotlib.pyplot as plt
 from matplotlib.animation import FuncAnimation
 import numpy as np

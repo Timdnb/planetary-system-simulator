@@ -1,3 +1,6 @@
+"""
+This program plots the orbits using the coordinates calculated in calc_orbit.py
+"""
 import matplotlib.pyplot as plt
 from matplotlib.animation import FuncAnimation
 import numpy as np
