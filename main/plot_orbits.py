@@ -100,7 +100,7 @@ def plot_orbits(all_planets, ms=20):
     # Animate orbits
     # -------------------------------------------------------------------------------------------------
 
-    # Create animation with 1ms interval, which is repeated, using the planet point coordinates
+    # Create animation with interval in ms (20 standard; variable in function), which is repeated, using the planet point coordinates
     ani = FuncAnimation(
         fig,
         lambda frame: update(
