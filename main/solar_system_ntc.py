@@ -22,9 +22,11 @@ AU = 149597871  # km
 # Semi-major axis is in km
 # Inclination is with respect to the ecliptic
 # For every row: 
-#   semi-major axis | eccentricity | inclinaton | arg. of periapsis | long. of asc. node | time of perihelion passage | moon yes/no | list no. of planet that moon orbits | mu | name | color 
+#   1. semi-major axis | 2. eccentricity | 3. inclinaton | 4. arg. of periapsis | 5. long. of asc. node | 6. time of perihelion passage | 7. moon yes/no |
+#   8. list no. of planet that moon orbits | 9. mu | 10. name | 11. color 
 all_planets = [
     # ------------------------- Planets -------------------------
+    # 1.     2.        3.     4.      5.      6. 7.     8. 9.                10.        11.
     (0.1*AU, 0.205630, 7.005, 29.124, 48.331, 0, False, 0, 2.2023 * 10 ** 4, "Mercury", "sandybrown"),
     (0.2*AU, 0.006772, 3.39, 54.884, 76.68, 0, False, 0, 3.248599 * 10 ** 5, "Venus", "gold"),
     (0.3*AU, 0.0167086, 0, 114.207, -11.26, 0, False, 0, 3.896004 * 10 ** 5, "Earth", "mediumspringgreen"),
@@ -34,6 +36,7 @@ all_planets = [
     (1.0*AU, 0.046381, 0.77, 96.998857, 74.006, 0, False, 0, 5.973939 * 10 ** 6, "Uranus", "powderblue"),
     (1.2*AU, 0.008678, 1.77, 276.336, 131.784, 0, False, 0, 6.836529 * 10 ** 6, "Neptune", "dodgerblue"),
     # ------------------------- Moons -------------------------
+    # 1.      2.      3.     4. 5. 6. 7.    8. 9.                  10.     11.
     (0.04*AU, 0.0549, 5.145, 0, 0, 0, True, 2, 3.896004 * 10 ** 10, "Moon", "lightgray"),
     (0.08*AU, 0.0074, 2.017, 0, 0, 0, True, 4, 1.266865 * 10 ** 11, "Callisto", "lightgray"),
     (0.08*AU, 0.000016, 129.812, 0, 0, 0, True, 7, 6.836529 * 10 ** 10, "Triton", "lightgray"),
