@@ -73,7 +73,7 @@ def plot_orbits(all_planets, ms=20):
     # List that contains all points that will be animated
     list_of_planet_points = []
 
-    # Lists that contain x and y coords for all planets
+    # Lists that contain x, y and z coordinates for all planets
     list_of_x_coords = []
     list_of_y_coords = []
     list_of_z_coords = []
