@@ -5,8 +5,6 @@ import matplotlib.pyplot as plt
 from matplotlib.animation import FuncAnimation
 import numpy as np
 
-# import timeit
-
 from calc_orbit import calc_orbit, AU
 
 # -------------------------------------------------------------------------------------------------
@@ -55,22 +53,6 @@ def plot_orbits(all_planets, ms=20):
 
         return planet_points
 
-
-    # print(
-    #     timeit.timeit(
-    #         lambda: calc_orbit(
-    #             all_planets[0][0],
-    #             all_planets[0][1],
-    #             all_planets[0][2],
-    #             all_planets[0][3],
-    #             all_planets[0][4],
-    #             8,
-    #             all_planets[0][7],
-    #         ),
-    #         number=5,
-    #     )
-    #     / 5 * 1000
-    # )
 
     # -------------------------------------------------------------------------------------------------
     # Setup of plotting
@@ -137,6 +119,7 @@ def plot_orbits(all_planets, ms=20):
     # -------------------------------------------------------------------------------------------------
     # Finalize and show plot
     # -------------------------------------------------------------------------------------------------
+
     lst_semi_major_ax =[]
     for i in range(len(all_planets)):
         lst_semi_major_ax.append(all_planets[i][0])
