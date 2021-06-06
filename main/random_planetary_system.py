@@ -5,6 +5,7 @@ import matplotlib.pyplot as plt
 from matplotlib.animation import FuncAnimation
 import numpy as np
 import random
+import winsound
 
 from generate_random_planet_names import generate_random_planet_names
 from plot_orbits import plot_orbits
@@ -15,6 +16,9 @@ def random_color():
     """
     rgb=[random.randint(0, 255)/255, random.randint(0, 255)/255, random.randint(0, 255)/255]
     return tuple(rgb)
+
+# Loop space sounds in the background
+winsound.PlaySound('sounds/space-sounds.wav', winsound.SND_LOOP + winsound.SND_ASYNC | winsound.SND_ALIAS )
 
 # -------------------------------------------------------------------------------------------------
 # Input parameters

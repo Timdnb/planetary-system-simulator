@@ -4,8 +4,12 @@ This version will simulate the solar system which is NOT to scale, put dt in cal
 import matplotlib.pyplot as plt
 from matplotlib.animation import FuncAnimation
 import numpy as np
+import winsound
 
 from plot_orbits import plot_orbits
+
+# Loop space sounds in the background
+winsound.PlaySound('sounds/space-sounds.wav', winsound.SND_LOOP + winsound.SND_ASYNC | winsound.SND_ALIAS )
 
 # -------------------------------------------------------------------------------------------------
 # Input parameters
